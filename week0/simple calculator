@@ -1,0 +1,14 @@
+a,b=map(int,input("enter two number: ").split())
+c=input("enter symbol: ")[0]
+if(c=='+'):
+    print(a+b)
+elif(c=='-'):
+    print(a-b)
+elif(c=='*'):
+    print(a*b)
+elif(c=='/'):
+    print(a/b)
+elif(c=='%'):
+    print(a%b)
+else:
+    print("invalid input")
