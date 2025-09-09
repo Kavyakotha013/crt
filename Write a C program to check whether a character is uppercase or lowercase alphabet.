@@ -1,0 +1,7 @@
+a=input()[0]
+if(a>="A" and a<="Z"):
+    print("upper")
+elif(a>='a' and a<='z'):
+    print("lower")
+else:
+    print("invaild")
