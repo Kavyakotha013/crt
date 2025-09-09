@@ -1,0 +1,5 @@
+a=int(input())
+if(a%5==0 and a%11==0):
+    print("divisible by number 5 and 11")
+else:
+    print("not divisiable by 5 and 11")
