@@ -1,0 +1,10 @@
+
+a,b=map(int,input("enter cost and selling prices").split())
+pro=b-a
+proper=(pro*100)/a
+los=a-b
+losper=(los*100)/a
+if pro>=los:
+   print(f'profit {pro}')
+else:
+     print(f"loss {los}")  
