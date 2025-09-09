@@ -1,0 +1,7 @@
+a = int(input())
+weekdict = {1:'monday', 2:'tuesday', 3:'wednesday', 4:'thursday', 5:'friday', 6:'saturday', 7:'sunday'}
+
+if a % 8 != 0:
+    print(weekdict[a % 8])
+else:
+    print("invalid input")
