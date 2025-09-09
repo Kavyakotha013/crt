@@ -1,0 +1,15 @@
+a = int(input())
+note500=note200=note100=note50=0
+if(a>=500):
+    note500=a//500
+    a=a-500*note500
+if(a>=200):
+    note200=a//200
+    a=a-200*note200
+if(a>=100):
+    note100=a//100
+    a=a-100*note100
+if(a>=50):
+    note50=a//50
+    a=a-50*note50
+print(f"500:{note500} 200:{note200} 100:{note100} 50:{note50} and balance is:{a}")
