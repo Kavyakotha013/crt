@@ -1,0 +1,45 @@
+n=int(input())
+b=int(input())
+a=n
+max=0
+while(n!=0):
+  if(n%10>=b):
+    print("not vaild")
+    break
+  else:
+    if(max < (n%10)):
+      max=n%10
+  n=n//10
+ans=0
+l=0
+rev=0
+if(n==0):
+  if(b==10):
+    while(a!=0):
+      ans=ans+((a%max)*(b**l))
+      l=l+1
+      a=a//max
+    print("ans of base 9",ans)
+  else:
+    an=0
+    while(a!=0):
+      an=an+((a%10)*(b**l))
+      l=l+1
+      a=a//10
+    l=0
+    while(ans!=0):
+      ans=b+((an%max)*10**l)
+      l=l+1
+      an=an//max
+while(ans!=0):
+  rev=rev*10+(ans%10)
+  ans=ans//10
+print("rev of base 9",rev)
+l=0
+ans=0
+while(rev!=0):
+  ans=ans+((rev%10)*(max**l))
+  l=l+1
+  rev=rev//10
+print("final ans",ans)
+    
