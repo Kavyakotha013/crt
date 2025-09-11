@@ -1,0 +1,30 @@
+n=int(input())
+b=int(input())
+d=int(input())
+a=n
+sum=0
+l=0
+p=0
+while(n!=0):
+    if(n%10>=b):
+        print("invalid input")
+        break
+    n=n//10
+if(n==0):
+    if(d==10 or b==10):
+        while(a!=0):
+            sum=sum+((a%d)*(b**l))
+            l=l+1
+            a=a//d
+        print(sum)  
+    else:
+        while(a!=0):
+            sum=sum+((a%10)*(b**l))
+            l=l+1
+            a=a//10
+        l=0
+        while(sum!=0):
+            p=p+((sum%d)*(10**l))
+            l=l+1
+            sum=sum//d
+        print(p)
