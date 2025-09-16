@@ -1,0 +1,28 @@
+#method1
+l=list(map(int,input().split(" ")))
+d={}
+d=d.fromkeys(l,0)
+for i in d.keys():
+    d[i]=l.count(i)
+for i in d.keys():
+    print(i,"occur",d[i])
+for i,j in d.items():
+    print(i,"occur",j)#i=key, j=value in a set
+
+#method2:
+l=list(map(int,input().split(" ")))
+s=set(l)
+for i in s:
+    print(i,l.count(i))
+#method3:prevese order as user given
+a=[]
+n=int(input())
+for i in range(0,n,1):
+    k=int(input())
+    a.append(k)
+b=[]
+for i in a:
+    if i not in b:
+        b.append(i)
+for i in b:
+    print(i,"occur",a.count(i))
