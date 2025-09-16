@@ -1,0 +1,17 @@
+l=list(map(int,input().split(" ")))
+d={}
+d=d.fromkeys(l,0)
+max=0
+min=l[0]
+for i in d.keys():
+    if(max<i):
+        max=i
+    if(min>i):
+        min=i
+    d[i]=l.count(i)
+for i in range(min,max+1,1):
+    if(i in d.keys()):
+        print(i,"occured",d[i])
+    else:
+        print(i,"occured",0)
+        
