@@ -1,6 +1,71 @@
 l=list(map(int,input().split()))
-for i in range(0,len(l)-2,1):
+n=int(input())
+for i in range(0,len(l)-n+1,1):
     sum=0
-    for j in range(i,i+3,1):
+    for j in range(i,i+n,1):
         sum=sum+l[j]
     print(sum)
+
+
+#method 2
+l=list(map(int,input().split()))
+n=int(input())
+sum=0
+for i in range(0,n,1):
+    sum=sum+l[i]
+for i in range(0,len(l)-n+1,1):
+    print(sum)
+    if(i+n<len(l)):
+        sum=sum-l[i]+l[i+n]
+
+#method 3
+l=list(map(int,input().split()))
+n=int(input())
+sum=0
+for i in range(0,len(l)+1,1):
+    if(i<n):
+        sum=sum+l[i]
+    else:
+        print(sum)
+        if(i<len(l)):
+            sum=sum-l[i-n]+l[i]
+
+#method 4
+l=list(map(int,input().split()))
+n=int(input())
+sum=0
+j=0
+i=0
+while(j<len(l)):
+    sum=sum+l[j]
+    if(j-i+1==n):
+        print(sum)
+        sum=sum-l[i]
+        i=i+1
+    j=j+1
+
+
+
+
+#max and min
+
+
+l=list(map(int,input().split()))
+n=int(input())
+sum=0
+j=0
+i=0
+min=l[0]
+max=0
+while(j<len(l)):
+    sum=sum+l[j]
+    if(j-i+1==n):
+        print(sum)
+        if(min>sum):
+            min=sum
+        if(max<sum):
+            max=sum
+        sum=sum-l[i]
+        i=i+1
+    j=j+1
+print(min ,max)
