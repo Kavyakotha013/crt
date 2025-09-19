@@ -1,0 +1,16 @@
+arr=list(map(int,input().split()))
+k=int(input())
+l=0
+r=0
+a=[]
+sum=0
+maxl=0
+while(r<len(arr)):
+    sum+=arr[r]
+    while(sum>k):
+        sum-=arr[r]
+        l=l+1
+    if(sum<=k):
+        maxl=max(maxl,r-l+1)
+    r=r+1
+print(maxl)
