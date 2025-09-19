@@ -25,23 +25,18 @@ while(i<len(a)):
 #correct method is
 a=list(map(int,input().split(" ")))
 n=int(input())
-t=[]
-r=[]
 i=0
 j=0
+heap=0
+t=[]
+r=[]
 while(j<len(a)):
-    if(len(t)==0):
-        t.append(a[j])
-    else:
-        if(a[j]<=t[-1]):
-            t.append(a[j])
-        else:
-            if(len(t)!=0 and t[-1]>t[i]):
-                t.pop(i)
+    while(len(t)>0 and t[-1]>=a[j]):
+        t.pop(-1)
+    t.append(a[j])
     if(j-i+1==n):
-        r.append(t[0])
-        if(a[i]==t[0]):
-            t.pop(0)
+        r.append(t[heap])
+        if(a[i]==t[heap]):
+            t.pop(heap)
         i=i+1
     j=j+1
-print(r)
