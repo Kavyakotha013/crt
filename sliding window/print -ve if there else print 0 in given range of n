@@ -1,0 +1,21 @@
+a=list(map(int,input().split(" ")))
+n=int(input())
+i=0
+j=0
+heap=0
+t=[]
+r=[]
+while(j<len(a)):
+    while(len(t)>0 and t[-1]>a[j]):
+        t.pop(-1)
+    if(a[j]>=0):
+        t.append(0)
+    else:
+        t.append(a[j])
+    if(j-i+1==n):
+        r.append(t[heap])
+        if(a[i]==t[heap]):
+            t.pop(heap)
+        i=i+1
+    j=j+1
+print(r)
