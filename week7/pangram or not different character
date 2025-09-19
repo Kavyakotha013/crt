@@ -1,0 +1,28 @@
+s=input().lower()
+s2="abcdefghijklmnopqrstuvwxyz"
+s1=""
+for i in range(len(s)):
+    if (s[i]>='a' and s[i]<='z'):
+        s1 += s[i] 
+print(s1)
+f=0
+d={}
+d=d.fromkeys(s2,0)
+for i in range(len(s1)):
+    if(s1[i] in d):
+        d[s1[i]]=d[s1[i]]+1
+        print(d)
+    else:
+        f=1
+        print("no pamgram")
+        break
+if(f==0):
+    print("pangram")
+    k=0
+    for i in d.keys():
+        if(d[i]!=1):
+            k=1
+            print("No")
+            break
+    if(k==0):
+        print("yes")
