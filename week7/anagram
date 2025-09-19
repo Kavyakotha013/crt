@@ -1,0 +1,35 @@
+s1=input()
+s2=input()
+if(len(s1)!=len(s2)):
+    print("no")
+else:
+    d={}
+    f=0
+    d=d.fromkeys(s1,0)
+    for i in d.keys():
+        d[i]=s1.count(i)
+    print(d)
+    i=0
+    while(i<len(s2)):
+        if(s2[i] in d.keys()):
+            d[s2[i]]=d[s2[i]]-1
+            print(d)
+            if(d[s2[i]]<0):
+                print("n0k")
+                f=1
+                break
+        else:
+            print("no-")
+            f=1
+            break
+        i=i+1
+    k=0
+    if(f==0):
+        for i in d.keys():
+            if(d[i]!=0):
+                k=1
+                print("n0v")
+                break
+            k=0
+        if(k==0):
+            print("yes")
