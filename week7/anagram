@@ -23,6 +23,9 @@ else:
             f=1
             break
         i=i+1
+    if(f==0):
+        print(yes)
+######################a casewhere we use this one
     k=0
     if(f==0):
         for i in d.keys():
